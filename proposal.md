@@ -1,6 +1,8 @@
 1. The Big Idea: What is the main idea of your project? What topics will you explore and what will you accomplish? Describe your minimum viable product (MVP) and your stretch goal.
 
-  { The main Goal of this project is to create a functional web application that can isolate and store key information like dates, times, and topics from various event fliers. The MVP will involve text recognition in photos, and utilize an api to output a tentative schedule based on the events derived from the photo in an ICS format. A stretch goal is vocal recognition where a user could simply speak the information based around the event into the system and it would automatically store the information in a schedule. }
+'''
+  The main Goal of this project is to create a functional web application that can isolate and store key information like dates, times, and topics from various event fliers. The MVP will involve text recognition in photos, and utilize an api to output a tentative schedule based on the events derived from the photo in an ICS format. A stretch goal is vocal recognition where a user could simply speak the information based around the event into the system and it would automatically store the information in a schedule.
+  '''
 
 2. Learning Objectives: Since this is a team project, you may want to articulate both shared and individual learning goals.
 
