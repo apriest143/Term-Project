@@ -4,6 +4,17 @@
   The main Goal of this project is to create a functional web application that can isolate and store key information like dates, times, and topics from various event fliers. The MVP will involve text recognition in photos, and utilize an api to output a tentative schedule based on the events derived from the photo in an ICS format. A stretch goal is vocal recognition where a user could simply speak the information based around the event into the system and it would automatically store the information in a schedule.
 '''
 
+Syntax highlighting
+
+``` js
+var foo = function (bar) {
+  return bar++;
+};
+
+console.log(foo(5));
+```
+
+
 2. Learning Objectives: Since this is a team project, you may want to articulate both shared and individual learning goals.
 
 {Shared objectives: Understand and implement computer vision in a real world functional manner. Build a program that can iteratively add information to a database and output desired messages at specific times.}
