@@ -8,11 +8,11 @@ Shared objectives: Understand and implement computer vision in a real world func
 
 Andrew: Better understand API's and the process of moving data and working with it across multiple platforms. The backend process is often very confusing to me so working with how information is transferred and stored in very intriguing.
 
-Cole: Understand the implementation of these techniques for extra-curricular usage. Be able to utilize computer vision n future projects.
+Cole: Understand the implementation of these techniques for extra-curricular usage. Be able to utilize computer vision in future projects.
 
 3. Implementation Plan: This part may be somewhat ambiguous initially. You might have identified a library or a framework that you believe would be helpful for your project at this early stage. If you're uncertain about executing your project plan, provide a rough plan describing how you'll investigate this information further.
 
-  We will require the means to utilize computer vision in this project. Finding information on this will be easy, but implementing it will certainly pose its fair share of problems. We have noted some areas of interest COLE BRO WHAT ARE THESE but will require further research into the topic to make significant headway. We also are undecided on how the output (reminders) will be delivered to the user. There are many possible routes to solving this, but choosing an effective and feasible one will certainly take some theorizing. If vocal regonition is attempted this will take additional exploration of online resources, APIs, and language models.
+  We will require the means to utilize computer vision in this project. Finding information on this will be easy, but implementing it will certainly pose its fair share of problems. We have noted some areas of interest such as Google's Cloud Vision and Enkore API, but will require further research into the topic to make significant headway. We also are undecided on how the output (reminders) will be delivered to the user. There are many possible routes to solving this, but choosing an effective and feasible one will certainly take some theorizing. If vocal regonition is attempted this will take additional exploration of online resources, APIs, and language models.
 
 4. Project Schedule: You have roughly 4-5 weeks to complete the project. Create a general timeline. Depending on your project, this could be a detailed schedule or just an overview. As the project progresses, you’ll likely need to revise this schedule.
 
