@@ -8,7 +8,7 @@ Shared objectives: Understand and implement computer vision in a real world func
 
 Andrew: Better understand API's and the process of moving data and working with it across multiple platforms. The backend process is often very confusing to me so working with how information is transferred and stored in very intriguing.
 
-Cole:
+Cole: Understand the implementation of these techniques for extra-curricular usage. Be able to utilize computer vision n future projects.
 
 3. Implementation Plan: This part may be somewhat ambiguous initially. You might have identified a library or a framework that you believe would be helpful for your project at this early stage. If you're uncertain about executing your project plan, provide a rough plan describing how you'll investigate this information further.
 
@@ -33,4 +33,4 @@ Week 5: Build out front facing web app. This will be a relatively quick part of 
 
 7. Additional Course Content: Are there any course topics or content you think would be helpful for your project?
 
-    Dictionaries, flask, API,
+    Dictionaries, flask, API, HTML
