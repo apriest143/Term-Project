@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Uploaded Flyers</title>
+</head>
+<body>
+    <h1>Uploaded Flyers</h1>
+    <ul>
+        {% for image in images %}
+            <li>
+                <img src="{{ url_for('static', filename='uploads/' + image) }}" alt="Uploaded Image" width="200">
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
