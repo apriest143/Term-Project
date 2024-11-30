@@ -1,0 +1,15 @@
+
+
+
+For the image to text part:
+ - We can use Tesseract OCR
+   - it is a free and open source libary that supports multiple languages
+  
+Then maybe use GPT to determine the name, date, location, and description
+
+then store and call the info based on the date
+
+
+
+update
+- Cannot use GPT as the respository is public - not sure how to store keys 

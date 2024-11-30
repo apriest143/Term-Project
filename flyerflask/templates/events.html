@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Events</title>
+    <style>
+        .event-card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .events-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+   <!-- events.html -->
+
+   {% extends "base.html" %}
+   {% block title %}Your Events{% endblock %}
+   {% block content %}
+       <h1>{{ user.username }}'s Events</h1>
+       <div class="events-container">
+           {% if events %}
+               {% for event in events %}
+                   <div class="event-card">
+                       <h3>{{ event.name or 'Unnamed Event' }}</h3>
+                       {% if event.date %}
+                           <p>Date: {{ event.date.strftime('%B %d, %Y') }}</p>
+                       {% else %}
+                           <p>Date: Unknown</p>
+                       {% endif %}
+                       {% if event.time %}
+                           <p>Time: {{ event.time.strftime('%I:%M %p') }}</p>
+                       {% else %}
+                           <p>Time: Unknown</p>
+                       {% endif %}
+                       {% if event.location and event.location != 'Unknown Location' %}
+                           <p>Location: {{ event.location }}</p>
+                       {% else %}
+                           <p>Location: Unknown</p>
+                       {% endif %}
+                       {% if event.description and event.description != 'No description provided.' %}
+                           <p>Description: {{ event.description }}</p>
+                       {% else %}
+                           <p>Description: No description provided.</p>
+                       {% endif %}
+                   </div>
+               {% endfor %}
+               <div class="export-section" style="margin-top: 20px; text-align: center;">
+                   <a href="{{ url_for('export_ics') }}" class="download-button" style="
+                       padding: 10px 20px;
+                       background-color: #4CAF50;
+                       color: white;
+                       text-decoration: none;
+                       border-radius: 5px;
+                       display: inline-block;
+                       margin-top: 10px;">
+                       Download Events as Calendar (.ics)
+                   </a>
+               </div>
+           {% else %}
+               <p>No events found. <a href="{{ url_for('upload_image') }}">Upload a flyer</a> to add events.</p>
+           {% endif %}
+       </div>
+   {% endblock %}
+</body>
+</html>

@@ -1,21 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Image</title>
-</head>
+
 <body>
-    <h1>Upload Your Flyer</h1>
-    <form action="{{ url_for('upload_image') }}" method="post" enctype="multipart/form-data">
-        <label for="file">Select Image:</label>
-        <input type="file" name="file" id="file">
-        <button type="submit">Upload</button>
-    </form>
-    <a href="{{ url_for('index') }}">Back to Home</a>
-    <br>
-    <a href="{{ url_for('view_uploads') }}">View your Uploaded Files</a>
-    <br>
-    <a href="{{ url_for('calendar') }}">Go to Event Calendar</a>
+    {% extends "base.html" %}
+    {% block title %}Upload Image{% endblock %}
+    {% block content %}
+    <style>
+        .upload-container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .upload-title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .upload-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .file-input-container {
+            position: relative;
+            text-align: center;
+        }
+        
+        .file-input-label {
+            display: inline-block;
+            padding: 12px 20px;
+            background: #f8f9fa;
+            border: 2px dashed #ccc;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .file-input-label:hover {
+            background: #e9ecef;
+            border-color: #4CAF50;
+        }
+        
+        input[type="file"] {
+            display: none;
+        }
+        
+        .submit-button {
+            background: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+        
+        .submit-button:hover {
+            background: #45a049;
+        }
+        
+        #file-name {
+            margin-top: 10px;
+            color: #666;
+        }
+        
+        .preview-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        #image-preview {
+            max-width: 100%;
+            max-height: 300px;
+            display: none;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+    
+    <div class="upload-container">
+        <h1 class="upload-title">Upload Your Flyer, {{ user.username }}</h1>
+        <form class="upload-form" action="{{ url_for('upload_image') }}" method="post" enctype="multipart/form-data">
+            <div class="file-input-container">
+                <label for="file" class="file-input-label">
+                    Choose a file or drag it here
+                </label>
+                <input type="file" name="file" id="file" accept="image/*" onchange="showFileName(this)">
+                <div id="file-name"></div>
+            </div>
+            <div class="preview-container">
+                <img id="image-preview" src="#" alt="Preview">
+            </div>
+            <button type="submit" class="submit-button">Upload</button>
+        </form>
+    </div>
+    
+    <script>
+    function showFileName(input) {
+        const fileName = document.getElementById('file-name');
+        const preview = document.getElementById('image-preview');
+        
+        if (input.files && input.files[0]) {
+            fileName.textContent = input.files[0].name;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+                preview.style.display = 'inline-block';
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    </script>
+    {% endblock %}
 </body>
 </html>

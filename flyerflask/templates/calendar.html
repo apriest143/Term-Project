@@ -11,18 +11,39 @@
             gap: 5px;
             text-align: center;
         }
-        .calendar div {
+        .calendar-day {
             padding: 10px;
             border: 1px solid #ccc;
+            min-height: 100px;
             background-color: #f9f9f9;
         }
-        .header {
+        .other-month {
+            background-color: #eee;
+            color: #999;
+        }
+        .today {
+            background-color: #e6f3ff;
             font-weight: bold;
+        }
+        .event {
+            margin: 2px 0;
+            padding: 2px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 3px;
+            font-size: 0.8em;
+        }
+        .month-header {
+            text-align: center;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Event Calendar</h1>
+    <div class="month-header">
+        <h2>{{ month_name }}</h2>
+    </div>
+    
     <div class="calendar">
         <div class="header">Sun</div>
         <div class="header">Mon</div>
@@ -32,13 +53,22 @@
         <div class="header">Fri</div>
         <div class="header">Sat</div>
 
-        {% for week in dates %}
+        {% for week in weeks %}
             {% for day in week %}
-                <div>{{ day }}</div>
+                <div class="calendar-day {% if not day.is_current_month %}other-month{% endif %} {% if day.date == today %}today{% endif %}">
+                    {{ day.date.day }}
+                    {% for event in day.events %}
+                    <div class="event">
+                        <strong>{{ event.name }}</strong>
+                        {% if event.time %}<br>{{ event.time.strftime('%I:%M %p') }}{% endif %}
+                        {% if event.location %}<br>{{ event.location }}{% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
             {% endfor %}
         {% endfor %}
     </div>
-    <br>
+    
     <a href="{{ url_for('index') }}">Back to Home</a>
 </body>
 </html>

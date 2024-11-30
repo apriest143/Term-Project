@@ -1,0 +1,32 @@
+<!-- Add to base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        .nav-menu {
+            background: #f8f9fa;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .nav-menu a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    {% if g.user %}
+    <div class="nav-menu">
+        <a href="{{ url_for('upload_image') }}">Upload</a>
+        <a href="{{ url_for('events') }}">Events</a>
+        <a href="{{ url_for('calendar') }}">Calendar</a>
+        <a href="{{ url_for('view_uploads') }}">Uploads</a>
+        <a href="{{ url_for('export_ics') }}">Export to ICS</a> 
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+    {% endif %}
+    {% block content %}{% endblock %}
+</body>
+</html>
