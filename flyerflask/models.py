@@ -14,7 +14,7 @@ class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200), nullable=True)
     date = db.Column(db.Date, nullable=True)
-    time = db.Column(db.Time, nullable=True)  # Add this line
+    time = db.Column(db.Time, nullable=True) 
     location = db.Column(db.String(200))
     description = db.Column(db.Text)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)

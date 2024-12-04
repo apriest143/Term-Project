@@ -78,8 +78,6 @@ def logout():
     session.pop('user_id', None)
     return redirect(url_for('index'))
 
-# Image upload route
-# flyer_app.py
 
 @app.route('/upload', methods=['GET', 'POST'])
 @login_required
