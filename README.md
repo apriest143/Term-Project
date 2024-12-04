@@ -12,10 +12,12 @@ Implementation Information:
 There is a large number of packages that need installation before this our project can be ran properly.
 
 for models.py:
+````
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-
+```
 for main.py:
+```
 import pytesseract
 from PIL import Image
 import os
@@ -23,10 +25,11 @@ from dotenv import load_dotenv
 from datetime import datetime
 from openai import OpenAI
 from dateutil import parser
-
+```
 (IMPORTANT) pytesseract must correctly pathed to the repository during installation or else it will not call correctly
 
-for flyer_app.py: 
+for flyer_app.py:
+```
 from flask import Flask, request, render_template, redirect, url_for, session, g, current_app
 import datetime
 import os
@@ -39,7 +42,7 @@ import logging
 from ics import Calendar, Event as ICSEvent
 from flask import send_file
 import io
-
+```
 
 
 Although each project will have unique details, showcasing your software's capabilities is essential! Screenshots and video can be especially useful. Include graphs and data, if appropriate.
