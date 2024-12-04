@@ -16,7 +16,9 @@ for models.py:
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 ```
+
 for main.py:
+
 ```
 import pytesseract
 from PIL import Image
@@ -26,9 +28,11 @@ from datetime import datetime
 from openai import OpenAI
 from dateutil import parser
 ```
+
 (IMPORTANT) pytesseract must correctly pathed to the repository during installation or else it will not call correctly
 
 for flyer_app.py:
+
 ```
 from flask import Flask, request, render_template, redirect, url_for, session, g, current_app
 import datetime
