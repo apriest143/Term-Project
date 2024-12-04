@@ -1,3 +1,6 @@
+<img width="518" alt="image" src="https://github.com/user-attachments/assets/7e1b8517-8035-4270-b379-59861cda8491">
+<img width="531" alt="image" src="https://github.com/user-attachments/assets/b8c8b561-a9d1-4696-a432-a27d98cee060">
+
 # Term-Project
 Andrew and Cole's OIM3640 Term Python Project
 
@@ -27,8 +30,7 @@ There is a large number of packages that need installation before this our proje
 
 (IMPORTANT) pytesseract must correctly pathed to the repository during installation or else it will not call correctly
 
-<img width="1018" alt="image" src="https://github.com/user-attachments/assets/7e1b8517-8035-4270-b379-59861cda8491">
-<img width="1031" alt="image" src="https://github.com/user-attachments/assets/b8c8b561-a9d1-4696-a432-a27d98cee060">
+
 
 
 Our project works quite functionally. The computer vision does struggle to find information depending on the complexity and amount of information shown on the uploaded image. However, it is quite good with dates and getting an overall summary of the event.
